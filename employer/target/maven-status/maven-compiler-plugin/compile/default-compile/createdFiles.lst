@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 service\Application.class
 service\controller\JobController.class
+=======
+service/Application.class
+service/controllers/JobPostController.class
+>>>>>>> 977116365ffa4f8f39c917a359f6358f6d90b4e8

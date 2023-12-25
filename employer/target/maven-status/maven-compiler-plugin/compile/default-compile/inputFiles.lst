@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 D:\MSc.ComputerScience\DistributedSystems\Project\Distributed-System-Project\employer\src\main\java\service\Application.java
 D:\MSc.ComputerScience\DistributedSystems\Project\Distributed-System-Project\employer\src\main\java\service\controller\JobController.java
+=======
+/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project/employer/src/main/java/service/controllers/JobPostController.java
+/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project/employer/src/main/java/service/Application.java
+>>>>>>> 977116365ffa4f8f39c917a359f6358f6d90b4e8

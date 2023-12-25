@@ -1,9 +1,9 @@
 package service.core.repositories;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 import service.core.models.Job;
+import java.util.List;
 
 public interface JobRepository extends MongoRepository<Job, String> {
-    // Custom queries or methods if needed
+    List<Job> findBySkillsIn(List<String> skills);
 }
-

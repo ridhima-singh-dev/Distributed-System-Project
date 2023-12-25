@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="freelance-marketplace" />
         <module name="core" />
       </profile>
@@ -19,6 +20,19 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="freelance-marketplace" options="-parameters" />
+=======
+        <module name="employee" />
+        <module name="core" />
+        <module name="employer" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="core" options="-parameters" />
+      <module name="employee" options="-parameters" />
+      <module name="employer" options="-parameters" />
+>>>>>>> 977116365ffa4f8f39c917a359f6358f6d90b4e8
     </option>
   </component>
 </project>

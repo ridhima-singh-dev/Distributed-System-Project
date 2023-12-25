@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 service\core\models\Job.class
 service\core\repositories\JobRepository.class
+=======
+service/core/models/Job.class
+service/core/repositories/JobRepository.class
+>>>>>>> 977116365ffa4f8f39c917a359f6358f6d90b4e8

@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 D:\MSc.ComputerScience\DistributedSystems\Project\Distributed-System-Project\core\src\main\java\service\core\repositories\JobRepository.java
 D:\MSc.ComputerScience\DistributedSystems\Project\Distributed-System-Project\core\src\main\java\service\core\models\Job.java
+=======
+/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project/core/src/main/java/service/core/repositories/JobRepository.java
+/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project/core/src/main/java/service/core/models/Job.java
+>>>>>>> 977116365ffa4f8f39c917a359f6358f6d90b4e8
