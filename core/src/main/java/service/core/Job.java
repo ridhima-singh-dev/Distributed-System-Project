@@ -1,4 +1,8 @@
 package service.core;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document(collection = "JobPostings")
 public class Job {
     public Job(String title, String companyName, String companyDescription, double salary, String[] skills  ) {
         this.title = title;

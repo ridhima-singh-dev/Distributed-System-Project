@@ -1,41 +1,40 @@
 package service.controller;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import service.core.Job;
+import service.repository.JobRepository;
 
 @RestController
 public class JobController {
-//    private Map<String, Job> quotations = new TreeMap<>();
     @Value("${server.port}")
     private int port;
+    private final JobRepository jobRepository;
+    public JobController(JobRepository jobRepository) {
+        this.jobRepository = jobRepository;
+    }
 
     @PostMapping(value="/postJob", consumes="application/json")
-    public ResponseEntity<Job> createQuotation(
+    public ResponseEntity<?> createJob(
             @RequestBody Job info) {
-        //ADD This to MongoDb
-
-//        Quotation quotation = service.generateQuotation(info);
-//        quotations.put(quotation.reference, quotation);
-        String url = "http://"+getHost()+"/quotations/";
-//                + quotation.reference;
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .header("Location", url)
-                .header("Content-Location", url)
-                .body(info);
+        System.out.println(info);
+        try {
+            jobRepository.save(info);
+            return ResponseEntity
+                    .status(HttpStatus.CREATED)
+                    .body(Collections.singletonMap("success", true));
+        } catch (Exception e) {
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Collections.singletonMap("success", false));
+        }
     }
 
     private String getHost() {
