@@ -9,8 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import service.core.Job;
-import service.repository.JobRepository;
+
+import service.core.models.Job;
+import service.core.repositories.JobRepository;
 
 @RestController
 public class JobController {
