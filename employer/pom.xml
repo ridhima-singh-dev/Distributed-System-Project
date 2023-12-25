@@ -1,6 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>FreelanceFleet</groupId>
+    <groupId>ds-project</groupId>
     <artifactId>employer</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
@@ -17,7 +17,7 @@
     </parent>
     <dependencies>
         <dependency>
-            <groupId>FreelanceFleet</groupId>
+            <groupId>ds-project</groupId>
             <artifactId>core</artifactId>
             <version>0.0.1</version>
         </dependency>
