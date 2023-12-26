@@ -4,22 +4,22 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
-@Document(collection = "jobs")
+@Document(collection = "JobPostings")
 public class Job {
     @Id
     private String jobID;
     private String title;
     private String companyName;
-    private String companyDescription;
+    private String jobDescription;
     private double salary;
     private List<String> skills;
     private List<String> applicants;
 
-    public Job(String jobID, String title, String companyName, String companyDescription, double salary, List<String> skills, List<String> applicants) {
+    public Job(String jobID, String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants) {
         this.jobID = jobID;
         this.title = title;
         this.companyName = companyName;
-        this.companyDescription = companyDescription;
+        this.jobDescription = jobDescription;
         this.salary = salary;
         this.skills = skills;
         this.applicants = applicants;
@@ -51,12 +51,12 @@ public class Job {
         this.companyName = companyName;
     }
 
-    public String getCompanyDescription() {
-        return companyDescription;
+    public String getJobDescription() {
+        return jobDescription;
     }
 
-    public void setCompanyDescription(String companyDescription) {
-        this.companyDescription = companyDescription;
+    public void setJobDescription(String jobDescription) {
+        this.jobDescription = jobDescription;
     }
 
     public double getSalary() {
