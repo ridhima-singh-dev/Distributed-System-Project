@@ -31,13 +31,15 @@ public class JobDecisionController {
     public ResponseEntity<?> applyJob(@RequestBody ApplyJobRequest info) {
         try {
 
+//
+//            updateJob(info);
             updateUserActivity(info);
-            updateJob(info);
             return ResponseEntity
                     .status(HttpStatus.CREATED)
                     .body(Collections.singletonMap("success", true));
 
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Collections.singletonMap("success", false));
@@ -61,11 +63,25 @@ public class JobDecisionController {
     private void updateUserActivity(ApplyJobRequest info){
         String email = info.getEmail();
         Optional<UserActivity> existingUserActivityEmail = userRepository.findByEmail(info.getEmail());
+        System.out.println(existingUserActivityEmail + "Email Id");
         if (existingUserActivityEmail.isPresent()) {
+            System.out.println("Inside the block");
             UserActivity existingUserActivity = existingUserActivityEmail.get();
+            System.out.println("Inside the block" + existingUserActivity.getJobsApplied());
             existingUserActivity.getJobsApplied().add(info.getJobID());
+            System.out.println("Inside the block" + existingUserActivity);
             userRepository.save(existingUserActivity);
+            System.out.println("Document updated successfully!");
+
+//            UserActivity existingUserActivity = existingUserActivityEmail.get();
+//            List<String> jobs = existingUserActivity.getJobsApplied();
+//            if (existingUserActivity == null) {
+//                existingUserActivity.setJobsApplied(new ArrayList<>());
+//            }
+//            jobs.add(info.getEmail());
+//            userRepository.save(existingUserActivity);
         } else {
+            System.out.println("Outside the block");
             UserActivity newUserActivity = new UserActivity(email, null, Collections.singletonList(info.getJobID()));
             userRepository.save(newUserActivity);
         }

@@ -10,8 +10,7 @@ import java.util.List;
 
 @Document(collection = "UserActivity")
 public class UserActivity {
-    @Field("email")
-    @Indexed(unique = true)
+    @Id
     private String email;
     @Field("jobsApplied")
     private List<String> jobsApplied;
