@@ -7,33 +7,34 @@ import java.util.List;
 @Document(collection = "JobPostings")
 public class Job {
     @Id
-    private String jobID;
+    private String id;
     private String title;
     private String companyName;
     private String jobDescription;
     private double salary;
     private List<String> skills;
     private List<String> applicants;
+    private String email;
 
-    public Job(String jobID, String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants) {
-        this.jobID = jobID;
+    public Job(String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants, String email) {
         this.title = title;
         this.companyName = companyName;
         this.jobDescription = jobDescription;
         this.salary = salary;
         this.skills = skills;
         this.applicants = applicants;
+        this.email = email;
     }
 
     public Job() {}
 
     public String getJobID() {
-        return jobID;
+        return id;
     }
 
-    public void setJobID(String jobID) {
-        this.jobID = jobID;
-    }
+//    public void setJobID(String jobID) {
+//        this.jobID = jobID;
+//    }
 
     public String getTitle() {
         return title;
@@ -81,5 +82,13 @@ public class Job {
 
     public void setApplicants(List<String> applicants) {
         this.applicants = applicants;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
