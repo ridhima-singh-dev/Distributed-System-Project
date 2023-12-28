@@ -8,5 +8,6 @@
         <module>core</module>
         <module>employee</module>
         <module>employer</module>
+        <module>notification</module>
     </modules>
 </project>

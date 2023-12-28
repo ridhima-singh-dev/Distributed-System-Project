@@ -6,13 +6,13 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>3.2.1</version>
         <relativePath/>
     </parent>
     <dependencies>
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.4.RELEASE</version> <!-- Replace with the version of Spring Boot you are using -->
+            <version>3.2.1</version> <!-- Replace with the version of Spring Boot you are using -->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,7 +45,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.4.RELEASE</version> <!-- Use the appropriate version -->
+                <version>3.2.1</version> <!-- Use the appropriate version -->
                 <configuration>
                     <executable>true</executable>
                 </configuration>
