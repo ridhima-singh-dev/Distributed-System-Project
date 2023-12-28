@@ -23,18 +23,29 @@ public class Runner implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     System.out.println("Sending message...");
-    rabbitTemplate.convertAndSend(ApplicationQueue.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!");
+    
+    Job job = new Job(
+            "1",
+            "Software Engineer",
+            "ABC Company",
+            "Job description",
+            80000.0,
+            List.of("Java", "Spring"),
+            List.of("applicant1", "applicant2")
+    );
+    System.out.println("Im before msg convertor");
+    
+    rabbitTemplate.setMessageConverter(new org.springframework.amqp.support.converter.Jackson2JsonMessageConverter());
+    
+    System.out.println("Im after msg convertor");
+
+    rabbitTemplate.convertAndSend(ApplicationQueue.topicExchangeName, "job.application", job);
+    System.out.println("Im after convert and send");
+
     receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
     
-	/*
-	 * System.out.println("Sending job application...");
-	 * 
-	 * Job job = new Job("1", "Software Engineer", "ABC Company", "Job description",
-	 * 80000.0, List.of("Java", "Spring"), List.of("applicant1", "applicant2"));
-	 * 
-	 * rabbitTemplate.convertAndSend(ApplicationQueue.topicExchangeName,
-	 * "job.application", job);
-	 */
+    System.out.println("Im after receiver getlatch");
+    
     }
   
 

@@ -25,10 +25,7 @@ public class ApplicationQueue {
 	static final String topicExchangeName = "spring-boot-exchange";
 
 	  static final String queueName = "spring-boot";
-	  
-		/*
-		 * @Autowired private RabbitTemplate rabbitTemplate;
-		 */
+
 	  @Bean
 	  Queue queue() {
 	    return new Queue(queueName, false);
@@ -40,19 +37,9 @@ public class ApplicationQueue {
 	  }
 	  
 	 
-
-		/*
-		 * @Bean public Jackson2JsonMessageConverter jsonMessageConverter() { return new
-		 * Jackson2JsonMessageConverter(); }
-		 * 
-		 * @Bean public Boolean sendJobToQueue(Job job, Jackson2JsonMessageConverter
-		 * converter) { rabbitTemplate.setMessageConverter(converter);
-		 * rabbitTemplate.convertAndSend(topicExchangeName, "job.application", job);
-		 * return true; }
-		 */
 	  @Bean
 	  Binding binding(Queue queue, TopicExchange exchange) {
-	    return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
+		  return BindingBuilder.bind(queue).to(exchange).with("job.application.#");
 	  }
 
 	  @Bean
