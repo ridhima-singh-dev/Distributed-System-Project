@@ -1,13 +1,7 @@
 package service.controllers;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.core.models.ApplyJobRequest;
 import service.core.models.Job;
 import service.core.models.UserActivity;
 import service.core.repositories.JobRepository;
@@ -28,11 +22,11 @@ public class JobDecisionController {
     }
 
     @PostMapping(value="/applyJob", produces="application/json")
-    public ResponseEntity<?> applyJob(@RequestBody ApplyJobRequest info) {
+    public ResponseEntity<?> applyJob(@RequestBody Job info) {
         try {
 
 //
-//            updateJob(info);
+            updateJob(info);
             updateUserActivity(info);
             return ResponseEntity
                     .status(HttpStatus.CREATED)
@@ -46,7 +40,7 @@ public class JobDecisionController {
         }
 
     }
-    private void updateJob(ApplyJobRequest info) {
+    private void updateJob(Job info) {
         Optional<Job> foundJob = jobRepository.findById(info.getJobID());
         if (foundJob.isPresent()) {
             Job job = foundJob.get();
@@ -60,7 +54,7 @@ public class JobDecisionController {
         }
     }
 
-    private void updateUserActivity(ApplyJobRequest info){
+    private void updateUserActivity(Job info){
         String email = info.getEmail();
         Optional<UserActivity> existingUserActivityEmail = userRepository.findByEmail(info.getEmail());
         System.out.println(existingUserActivityEmail + "Email Id");
@@ -73,13 +67,7 @@ public class JobDecisionController {
             userRepository.save(existingUserActivity);
             System.out.println("Document updated successfully!");
 
-//            UserActivity existingUserActivity = existingUserActivityEmail.get();
-//            List<String> jobs = existingUserActivity.getJobsApplied();
-//            if (existingUserActivity == null) {
-//                existingUserActivity.setJobsApplied(new ArrayList<>());
-//            }
-//            jobs.add(info.getEmail());
-//            userRepository.save(existingUserActivity);
+
         } else {
             System.out.println("Outside the block");
             UserActivity newUserActivity = new UserActivity(email, null, Collections.singletonList(info.getJobID()));

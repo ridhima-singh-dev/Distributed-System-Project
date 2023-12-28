@@ -7,7 +7,7 @@ import java.util.List;
 @Document(collection = "JobPostings")
 public class Job {
     @Id
-    private String id;
+    private String jobID;
     private String title;
     private String companyName;
     private String jobDescription;
@@ -29,7 +29,7 @@ public class Job {
     public Job() {}
 
     public String getJobID() {
-        return id;
+        return jobID;
     }
 
 //    public void setJobID(String jobID) {

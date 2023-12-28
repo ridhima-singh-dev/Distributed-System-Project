@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a4b02833-8bc7-40e4-82ca-2a65395d6db2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/models/UserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/service/core/models/UserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/service/core/models/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/service/core/models/Job.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/service/core/repositories/JobRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/service/core/repositories/JobRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/models/ApplyJobRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/models/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/service/core/models/Job.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/core-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-0.0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobDecisionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobDecisionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employer/target/classes/service/controllers/JobPostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/employer/target/classes/service/controllers/JobPostController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employer/target/employer-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/employer/target/employer-0.0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employer/target/employer-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/employer/target/employer-0.0.1.jar.original" afterDir="false" />
     </list>
@@ -131,7 +129,8 @@
       <workItem from="1703612448588" duration="2030000" />
       <workItem from="1703633442772" duration="2895000" />
       <workItem from="1703674982567" duration="13230000" />
-      <workItem from="1703695263974" duration="10436000" />
+      <workItem from="1703695263974" duration="10635000" />
+      <workItem from="1703754760285" duration="2092000" />
     </task>
     <task id="LOCAL-00001" summary="JobPosting Setup">
       <created>1703343862022</created>
