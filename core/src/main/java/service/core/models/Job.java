@@ -14,16 +14,15 @@ public class Job {
     private double salary;
     private List<String> skills;
     private List<String> applicants;
-    private String email;
 
-    public Job(String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants, String email) {
+
+    public Job(String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants) {
         this.title = title;
         this.companyName = companyName;
         this.jobDescription = jobDescription;
         this.salary = salary;
         this.skills = skills;
         this.applicants = applicants;
-        this.email = email;
     }
 
     public Job() {}
@@ -31,10 +30,6 @@ public class Job {
     public String getJobID() {
         return jobID;
     }
-
-//    public void setJobID(String jobID) {
-//        this.jobID = jobID;
-//    }
 
     public String getTitle() {
         return title;
@@ -84,11 +79,4 @@ public class Job {
         this.applicants = applicants;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

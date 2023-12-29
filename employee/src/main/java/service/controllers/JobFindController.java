@@ -1,4 +1,4 @@
-package service.controllers;
+package service.employee.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +22,4 @@ public class JobFindController {
         return jobsBySkill;
     }
 
-//    @PostMapping("/addJob")
-//    public Job addJob(@RequestBody Job job) {
-//        return jobRepository.save(job);
-//    }
 }

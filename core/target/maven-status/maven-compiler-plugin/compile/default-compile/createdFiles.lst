@@ -1,5 +1,0 @@
-service\core\models\ApplyJobRequest.class
-service\core\repositories\JobRepository.class
-service\core\models\Job.class
-service\core\repositories\UserRepository.class
-service\core\models\UserActivity.class
