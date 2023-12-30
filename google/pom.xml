@@ -9,12 +9,14 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.4.RELEASE</version>
         <relativePath/>
     </parent>
+
     <dependencies>
         <dependency>
             <groupId>ds-project</groupId>
@@ -28,10 +30,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
         <dependency>
@@ -40,6 +38,7 @@
             <version>4.4.0</version> <!-- Use the latest version available -->
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>

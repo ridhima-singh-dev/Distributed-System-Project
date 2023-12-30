@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import service.core.models.Job;
 import service.core.repositories.JobRepository;
-
 import java.util.*;
+
 @RestController
 public class FbJobApplyController {
     private final JobRepository jobRepository;
