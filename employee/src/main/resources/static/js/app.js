@@ -1,7 +1,9 @@
 let email = 'kamal@ucdconnect.ie';
+let existingJobs = new Set();
 
 // Call below function on index.html load
 getAppliedJobs();
+setInterval(getAppliedJobs, 60000);
 
 function getAppliedJobs() {
     fetch(`http://localhost:8080/getAppliedJobs/${email}`, {
@@ -22,25 +24,27 @@ function populateTable(data) {
     const tableBody = document.getElementById('jobs'); 
     // Loop through the data and create table rows
     data.forEach(item => {
-        console.log(item.companyName)
-        const newRow = document.createElement('tr'); // Create a new table row
-        // Create table cells and populate data
-        newRow.innerHTML = `
-        <td>#${item.jobID}</td>
-        <td>
-            <span class="img-thumb">
-                ${getCompanyIcon(item.companyName)}
-                <span class="ml-2">${capitalizeFirstLetter(item.companyName)}</span>
-            </span>
-        </td>
-        <td>31/12/2023</td>
-        <td>Software Engineer</td>
-        <td>Remote</td>
-        <td>$${parseInt(item.salary)}</td>
-        <td>Skills</td>
-        <td><label class="mb-0 badge badge-primary" title="" data-original-title="Pending">View Detail</label></td>
-        `;
-        tableBody.appendChild(newRow);
+        if (!existingJobs.has(item.jobID)) {
+            const newRow = document.createElement('tr'); // Create a new table row
+            // Create table cells and populate data
+            newRow.innerHTML = `
+            <td>#${item.jobID}</td>
+            <td>
+                <span class="img-thumb">
+                    ${getCompanyIcon(item.companyName)}
+                    <span class="ml-2">${capitalizeFirstLetter(item.companyName)}</span>
+                </span>
+            </td>
+            <td>${item.dateApplied}</td>
+            <td>${item.title}</td>
+            <td>${item.location}</td>
+            <td>$${item.salary}</td>
+            <td>${item.skills}</td>
+            <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">View Detail</label></td>
+            `;
+            tableBody.appendChild(newRow);
+            existingJobs.add(item.jobID);
+        }
     });
 }
 

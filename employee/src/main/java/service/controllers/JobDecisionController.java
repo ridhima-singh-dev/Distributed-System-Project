@@ -63,10 +63,10 @@ public class JobDecisionController {
 
     private void updateUserActivity(List<String> info){
         String email = info.get(1);
-        String date = info.get(2);
         UserActivity existingUserActivity = userRepository.findByEmail(info.get(1));
         Map<String, Object> newJob = new HashMap<>();
         newJob.put("jobID", info.get(0));
+        newJob.put("dateApplied", info.get(2));
         newJob.put("companyName", info.get(3));
         newJob.put("salary", Double.parseDouble(info.get(4)));
         newJob.put("title", info.get(5));
@@ -80,7 +80,7 @@ public class JobDecisionController {
         } else {
             List<Map<String, Object>> jobsApplied = new ArrayList<>();
             jobsApplied.add(newJob);
-            UserActivity newUserActivity = new UserActivity(email, date, jobsApplied);
+            UserActivity newUserActivity = new UserActivity(email, jobsApplied);
             userRepository.save(newUserActivity);
         }
     }

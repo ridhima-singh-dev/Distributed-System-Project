@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="31639c87-f29f-46c2-877e-b30d2a14d8e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/models/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/service/core/models/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/employee/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobDecisionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobDecisionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobFindController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/models/UserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/models/UserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

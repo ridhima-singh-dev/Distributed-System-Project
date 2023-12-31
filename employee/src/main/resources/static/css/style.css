@@ -7004,3 +7004,8 @@ ul.colors li p {
 	}
 }
 
+/* Additional CSS */
+
+.view-detail:hover {
+    cursor: pointer;
+}
