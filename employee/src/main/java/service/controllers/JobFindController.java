@@ -1,4 +1,4 @@
-package service.employee.controllers;
+package service.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
