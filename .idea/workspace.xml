@@ -5,50 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31639c87-f29f-46c2-877e-b30d2a14d8e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobFindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobFindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobFindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobFindController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobFindController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Distributed-System-Project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/src/main/java/service/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/src/main/java/service/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobApplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apple/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple/src/main/java/service/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/apple/src/main/java/service/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobApplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/models/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/service/core/models/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/repositories/JobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/service/core/repositories/JobRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/employee/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobDecisionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobDecisionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobFindController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/models/UserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/models/UserActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobApplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/google/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google/src/main/java/service/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/google/src/main/java/service/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobApplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix/src/main/java/service/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/src/main/java/service/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobApplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobPostController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,17 +45,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.build"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2589183&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="service.controllers" />

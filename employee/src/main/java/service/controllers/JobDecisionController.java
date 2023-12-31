@@ -10,8 +10,8 @@ import java.util.*;
 
 @RestController
 public class JobDecisionController {
-    private final UserRepository userRepository;
 
+    private final UserRepository userRepository;
     public JobDecisionController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -19,7 +19,7 @@ public class JobDecisionController {
     @PostMapping(value="/applyJob", produces="application/json")
     public ResponseEntity<?> applyJob(@RequestBody Map<String,List<String>> info) {
         List<String> infoList = info.get("info");
-        String companyName = infoList.get(2);
+        String companyName = infoList.get(3);
         RestTemplate template = new RestTemplate();
         ResponseEntity<?> response = null;
         if(Objects.equals(companyName, "facebook")){
@@ -63,13 +63,24 @@ public class JobDecisionController {
 
     private void updateUserActivity(List<String> info){
         String email = info.get(1);
-        Optional<UserActivity> existingUserActivityEmail = userRepository.findByEmail(info.get(1));
-        if (existingUserActivityEmail.isPresent()) {
-            UserActivity existingUserActivity = existingUserActivityEmail.get();
-            existingUserActivity.getJobsApplied().add(info.get(0));
+        String date = info.get(2);
+        UserActivity existingUserActivity = userRepository.findByEmail(info.get(1));
+        Map<String, Object> newJob = new HashMap<>();
+        newJob.put("jobID", info.get(0));
+        newJob.put("companyName", info.get(3));
+        newJob.put("salary", Double.parseDouble(info.get(4)));
+        newJob.put("title", info.get(5));
+        newJob.put("location", info.get(6));
+        String[] skillsArray = info.get(7).split(",");
+        newJob.put("skills", Arrays.asList(skillsArray));
+        newJob.put("description", info.get(8));
+        if (existingUserActivity != null) {
+            existingUserActivity.getJobsApplied().add(newJob);
             userRepository.save(existingUserActivity);
         } else {
-            UserActivity newUserActivity = new UserActivity(email, Collections.singletonList(info.get(0)));
+            List<Map<String, Object>> jobsApplied = new ArrayList<>();
+            jobsApplied.add(newJob);
+            UserActivity newUserActivity = new UserActivity(email, date, jobsApplied);
             userRepository.save(newUserActivity);
         }
     }
