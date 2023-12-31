@@ -7,26 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="amazon" />
-        <module name="core" />
         <module name="apple" />
+        <module name="core" />
         <module name="facebook" />
         <module name="google" />
         <module name="netflix" />
         <module name="employee" />
-        <module name="freelance-marketplace" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="amazon" target="11" />
-      <module name="apple" target="11" />
-      <module name="core" target="11" />
-      <module name="Distributed-System-Project" target="1.5" />
-      <module name="employee" target="11" />
-      <module name="facebook" target="11" />
-      <module name="freelance-marketplace" target="11" />
-      <module name="google" target="11" />
-      <module name="netflix" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -35,7 +23,6 @@
       <module name="core" options="-parameters" />
       <module name="employee" options="-parameters" />
       <module name="facebook" options="-parameters" />
-      <module name="freelance-marketplace" options="-parameters" />
       <module name="google" options="-parameters" />
       <module name="netflix" options="-parameters" />
     </option>

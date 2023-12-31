@@ -1,4 +1,5 @@
 package service.controllers;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import service.core.models.Job;
 import service.core.repositories.JobRepository;
 import java.util.*;
+
 @RestController
 public class AzJobApplyController {
     private final JobRepository jobRepository;

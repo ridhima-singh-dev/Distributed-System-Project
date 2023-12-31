@@ -15,7 +15,6 @@ public class Job {
     private List<String> skills;
     private List<String> applicants;
 
-
     public Job(String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants) {
         this.title = title;
         this.companyName = companyName;

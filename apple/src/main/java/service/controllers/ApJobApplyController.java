@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+
 @RestController
 public class ApJobApplyController {
     private final JobRepository jobRepository;
