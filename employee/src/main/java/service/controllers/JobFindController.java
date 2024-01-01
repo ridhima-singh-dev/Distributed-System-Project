@@ -67,6 +67,30 @@ public class JobFindController {
         return jobs;
     }
 
+
+    @GetMapping(value="/findJobsByTitle", produces="application/json")
+    public List<Job> findJobByTitle(@RequestParam("title") String title) {
+        System.out.println(title);
+        List<Job> jobs = new ArrayList<>();
+        String[] serviceURLs = {
+                "http://0.0.0.0:8081/findJobsByTitle",
+                "http://0.0.0.0:8082/findJobsByTitle",
+                "http://0.0.0.0:8083/findJobsByTitle",
+                "http://0.0.0.0:8084/findJobsByTitle",
+                "http://0.0.0.0:8085/findJobsByTitle"
+        };
+        for (String url : serviceURLs) {
+            UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
+            builder.queryParam("title", title);
+
+            ResponseEntity<List> response = template.getForEntity(builder.toUriString(), List.class);
+            if (response.getStatusCode().equals(HttpStatus.OK)) {
+                jobs.addAll(response.getBody());
+            }
+        }
+        return jobs;
+    }
+
     @GetMapping(value="/getAppliedJobs/{email}", produces="application/json")
     public ResponseEntity<?> getAppliedJobs(@PathVariable("email") String email) {
         UserActivity userActivity = userRepository.findByEmail(email);

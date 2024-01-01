@@ -31,4 +31,13 @@ public class FbJobFindController {
         }
         return ResponseEntity.status(HttpStatus.OK).body((ArrayList<Job>) jobsBySkill);
     }
+
+    @GetMapping(value="/findJobsByTitle", produces="application/json")
+    public ResponseEntity<ArrayList<Job>> findJobsByTitle(@RequestParam("title") String title) {
+        List<Job> jobsByTitle = jobRepository.findByTitleContainingIgnoreCase(title);
+        for (Job job : jobsByTitle) {
+            System.out.println(job + "Jobs here");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body((ArrayList<Job>) jobsByTitle);
+    }
 }
