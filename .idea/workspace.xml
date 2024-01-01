@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b02833-8bc7-40e4-82ca-2a65395d6db2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/employee/src/main/resources/static/findJob.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/findjob.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/range.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/job-marketplace.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/src/main/java/service/controllers/AzJobFindController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apple/src/main/java/service/controllers/ApJobFindController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/service/core/repositories/JobRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/service/core/repositories/JobRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/java/service/controllers/JobFindController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/src/main/java/service/controllers/FbJobFindController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/google/src/main/java/service/controllers/GgJobFindController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobFindController.java" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/src/main/java/service/controllers/NfJobFindController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/js/findjob.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/findjob.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,27 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2589183",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "spring.configuration.checksum": "540050adc2821dd627022d2ba020d9cf",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kcheaito/Desktop/UCD/Fall 2023/COMP41720 - Disributed Systems/Assignment2/Distributed-System-Project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2589183&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;540050adc2821dd627022d2ba020d9cf&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="service.controllers" />
@@ -106,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703933055301</updated>
       <workItem from="1704111475219" duration="2440000" />
+      <workItem from="1704147122659" duration="2429000" />
     </task>
     <servers />
   </component>
