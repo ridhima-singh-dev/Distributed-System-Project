@@ -13,15 +13,16 @@ public class Job {
     private String jobID;
     private String title;
     private String companyName;
+    private String location;
     private String jobDescription;
     private double salary;
     private List<String> skills;
     private List<String> applicants;
 
-    public Job(String jobID, String title, String companyName, String jobDescription, double salary, List<String> skills, List<String> applicants) {
-        this.jobID = jobID;
+    public Job(String title, String companyName, String location, String jobDescription, double salary, List<String> skills, List<String> applicants) {
         this.title = title;
         this.companyName = companyName;
+        this.location = location;
         this.jobDescription = jobDescription;
         this.salary = salary;
         this.skills = skills;
@@ -30,28 +31,20 @@ public class Job {
 
     public Job() {}
 
-    public String getJobID() {
-        return jobID;
-    }
-
-    public void setJobID(String jobID) {
-        this.jobID = jobID;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getCompanyName() {
         return companyName;
     }
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getJobDescription() {
@@ -70,6 +63,22 @@ public class Job {
         this.salary = salary;
     }
 
+    public void setApplicants(List<String> applicants) {
+        this.applicants = applicants;
+    }
+
+    public String getJobID() {
+        return jobID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public List<String> getSkills() {
         return skills;
     }
@@ -81,8 +90,5 @@ public class Job {
     public List<String> getApplicants() {
         return applicants;
     }
-
-    public void setApplicants(List<String> applicants) {
-        this.applicants = applicants;
-    }
 }
+

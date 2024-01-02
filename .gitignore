@@ -7,3 +7,5 @@
 */*.ipr
 */*.iws
 /.metadata/
+
+.idea
