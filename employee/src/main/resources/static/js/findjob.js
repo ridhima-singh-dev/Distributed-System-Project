@@ -9,6 +9,7 @@ var skillArray = []
 var selectedskills = []
 
 function getAllJobs() {
+    callLoader()
     fetch(`http://localhost:8080/findAllJobs`, {
         method: 'GET',
         headers: {
@@ -21,9 +22,13 @@ function getAllJobs() {
             populateSkillArray(data);
             dataCopy = data;
             populateTable(data);
+            setTimeout(removeLoader, 1000);
             
         })
-        .catch(error => console.log('Error:', error));
+        .catch(error => {
+            console.log('Error:', error)
+            callError()
+        });
 }
 
 function populateCompany(data){
@@ -42,7 +47,7 @@ function populateCompany(data){
             }
         }
     })
-    console.log(jobData)
+    populateCompanyFilter(jobData)
 }
 
 function populateTable(data) {
@@ -73,6 +78,7 @@ function populateTable(data) {
                 </div>
             </div>
         </td>
+        <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">View</label></td>
         <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">Apply</label></td>
     `;
         tableBody.appendChild(newRow);
@@ -174,7 +180,9 @@ function filterBySkill(skill){
             populateTable(data);
             
         })
-        .catch(error => console.log('Error:', error));
+        .catch(error => {
+            callError()
+            console.log('Error:', error)});
     }else{
         document.getElementById('jobs').innerHTML = '';
         populateTable(dataCopy)
@@ -197,5 +205,50 @@ function filterByTitle(){
             
         })
         .catch(error => console.log('Error:', error));
-    
 }
+
+
+function populateCompanyFilter(data){
+    let companyFilter = document.getElementById("company-filter");
+    Object.keys(data).forEach((el,i)=>{
+        console.log(el, "Job")
+        let newRow =  document.createElement('li');
+        newRow.addEventListener('click', function() {
+            // Your onclick logic here
+            filterCompany(el)
+        });
+        newRow.innerHTML = `
+        <a href="javascript:;"><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="8px">
+                                        <path fill-rule="evenodd" fill=" " d="M0.038,4.720 L6.164,4.710 C6.558,4.710 6.878,4.392 6.878,3.999 L6.878,2.016 L9.967,3.999 L5.777,6.688 C5.445,6.901 5.349,7.342 5.563,7.673 C5.777,8.004 6.219,8.099 6.551,7.886 L11.673,4.597 C11.877,4.466 12.000,4.241 12.000,3.999 C12.000,3.756 11.877,3.531 11.673,3.400 L6.551,0.112 C6.331,-0.030 6.051,-0.040 5.822,0.085 C5.592,0.210 5.449,0.449 5.449,0.710 L5.449,3.286 L0.000,3.286 "></path>
+                                    </svg> ${capitalizeFirstLetter(el)}</a><span>${data[el].count}</span>
+    `
+    companyFilter.appendChild(newRow);
+})
+}
+
+function callLoader (){
+    let loaderBody = document.getElementById("loader_body");
+    loaderBody.innerHTML = `
+    <div class="loader">
+            <div class="spinner">
+              <img src="img/loader.gif" alt="">
+            </div> 
+          </div>
+    `
+}
+
+function removeLoader (){
+    let loaderBody = document.getElementById("loader_body");
+    loaderBody.innerHTML =''
+}
+
+function callError(){
+    let errorBody = document.getElementById("error_body");
+    errorBody.innerHTML = `
+    <div class="loader">
+    <img src="img/error.png" style="width: 400px;">
+    </div>`
+}
+
+
+// 

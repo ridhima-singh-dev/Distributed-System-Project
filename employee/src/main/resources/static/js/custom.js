@@ -40,19 +40,19 @@ Assigned to: Theme Forest
             this.PriceRange();
             this.Product_thumb_slider();
             this.counter_number();
-            this.loader();
+            // this.loader();
         },
 
         /*-----------------------------------------------------
             Fix Header User Button
         -----------------------------------------------------*/
 		// loader			
-		loader: function () {
-			jQuery(window).on('load', function() {
-				$(".loader").fadeOut();
-				$(".spinner").delay(500).fadeOut("slow");
-			});
-		},
+		// loader: function () {
+		// 	jQuery(window).on('load', function() {
+		// 		$(".loader").fadeOut();
+		// 		$(".spinner").delay(500).fadeOut("slow");
+		// 	});
+		// },
 		// loader
 
 		//Counter Js start

@@ -6,6 +6,7 @@ getAppliedJobs();
 setInterval(getAppliedJobs, 60000);
 
 function getAppliedJobs() {
+    callLoader()
     fetch(`http://localhost:8080/getAppliedJobs/${email}`, {
         method: 'GET',
         headers: {
@@ -16,8 +17,11 @@ function getAppliedJobs() {
         .then(data => {
             console.log(data);
             populateTable(data);
+            setTimeout(removeLoader,1000);
         })
-        .catch(error => console.log('Error:', error));
+        .catch(error => {
+            callError();
+            console.log('Error:', error)});
 }
 
 function populateTable(data) {
@@ -76,4 +80,28 @@ function getCompanyIcon(company) {
             "<path d='M27,6v10.75L23.48,6H23h-8.33H14v38.15l9-1.28V32.58l3.24,10.34l6.14,0.72L36,44.15V6H27z M29,8h5v30.13l-5-15.27V8z M17.39,8h4.64L23,10.96l4,12.22l2,6.12l4.06,12.4l-0.54-0.06l-4.76-0.56L27,38.66L23,25.9l-2-6.38L17.39,8z M21,41.13l-5,0.72 V10.24l5,15.96V41.13z'></path>" +
             "</svg>";
     }
+}
+
+function callLoader (){
+    let loaderBody = document.getElementById("loader_body");
+    loaderBody.innerHTML = `
+    <div class="loader">
+            <div class="spinner">
+              <img src="img/loader.gif" alt="">
+            </div> 
+          </div>
+    `
+}
+
+function removeLoader (){
+    let loaderBody = document.getElementById("loader_body");
+    loaderBody.innerHTML =''
+}
+
+function callError(){
+    let errorBody = document.getElementById("error_body");
+    errorBody.innerHTML = `
+    <div class="loader">
+    <img src="img/error.png" style="width: 400px;">
+    </div>`
 }
