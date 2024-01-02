@@ -7009,3 +7009,7 @@ ul.colors li p {
 .view-detail:hover {
     cursor: pointer;
 }
+
+#dropdownMenu2 {
+    border-width: 0;
+}

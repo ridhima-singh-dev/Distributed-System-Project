@@ -39,7 +39,16 @@ function populateTable(data) {
             <td>${item.title}</td>
             <td>${item.location}</td>
             <td>$${item.salary}</td>
-            <td>${item.skills}</td>
+            <td>
+                <div class="dropdown">
+                    <button class="dropdown-toggle mb-0 badge badge-primary" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Skills
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        ${item.skills.map((i) => `<button class="dropdown-item" type="button">${i}</button>`).join('')}
+                    </div>
+                </div>
+            </td>
             <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">View Detail</label></td>
             `;
             tableBody.appendChild(newRow);

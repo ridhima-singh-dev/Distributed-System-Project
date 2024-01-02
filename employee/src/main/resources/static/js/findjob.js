@@ -61,8 +61,8 @@ function populateTable(data) {
             </span>
         </td>
         <td>${capitalizeFirstLetter(item.title)}</td>
-        <td>Remote</td>
-        <td>$${parseInt(item.salary)}</td>
+        <td>${capitalizeFirstLetter(item.location)}</td>
+        <td>$${item.salary}</td>
         <td>
             <div class="dropdown">
                 <button class="dropdown-toggle mb-0 badge badge-primary" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,7 +73,7 @@ function populateTable(data) {
                 </div>
             </div>
         </td>
-        <td><label class="mb-0 badge badge-primary" title="" data-original-title="Pending">View Detail</label></td>
+        <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">Apply</label></td>
     `;
         tableBody.appendChild(newRow);
     });
@@ -125,7 +125,7 @@ function populateSkillArray(data){
     data.map(el=>{
         el.skills.forEach((skill,i)=>{
             if (skillArray.indexOf(skill.toLowerCase()) == -1){
-                skillArray.push(skill.toLowerCase())
+                skillArray.push(skill.toLowerCase());
             }
         })
     })
