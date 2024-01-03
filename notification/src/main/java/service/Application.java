@@ -1,28 +1,23 @@
-package service.notification;
+package service;
 
+import org.springframework.context.annotation.ComponentScan;
+import service.notification.models.Receiver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-
-import service.core.models.*;
 
 @SpringBootApplication
-//@ComponentScan(basePackages = "service")
-public class ApplicationQueue {
+//@ComponentScan(basePackages = "service.notification")
+public class Application {
 
-	static final String topicExchangeName = "spring-boot-exchange";
+	public static final String topicExchangeName = "spring-boot-exchange";
 
 	  static final String queueName = "spring-boot";
 
@@ -58,6 +53,6 @@ public class ApplicationQueue {
 	  }
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApplicationQueue.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 }

@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.2.1</version> <!-- Replace with the version of Spring Boot you are using -->
+            
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,7 +35,12 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.4.0</version> <!-- Use the latest version available -->
+            
+        </dependency>
+        <dependency>
+        	<groupId>ds-project</groupId>
+        	<artifactId>amazon</artifactId>
+        	<version>0.0.1</version>
         </dependency>
     </dependencies>
 
@@ -44,7 +49,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.2.1</version> <!-- Use the appropriate version -->
+               
                 <configuration>
                     <executable>true</executable>
                 </configuration>

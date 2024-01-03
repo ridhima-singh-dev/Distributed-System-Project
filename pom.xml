@@ -7,10 +7,12 @@
     <modules>
         <module>core</module>
         <module>employee</module>
+        <module>notification</module>
         <module>facebook</module>
         <module>amazon</module>
         <module>apple</module>
         <module>netflix</module>
         <module>google</module>
+        
     </modules>
 </project>

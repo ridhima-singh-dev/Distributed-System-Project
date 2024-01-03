@@ -1,54 +1,65 @@
 <project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>ds-project</groupId>
-    <artifactId>amazon</artifactId>
-    <version>0.0.1</version>
-    <packaging>jar</packaging>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
-        <relativePath/>
-    </parent>
-
-    <dependencies>
-        <dependency>
-            <groupId>ds-project</groupId>
-            <artifactId>core</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.4.RELEASE</version> <!-- Replace with the version of Spring Boot you are using -->
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.4.0</version> <!-- Use the latest version available -->
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.4.RELEASE</version> <!-- Use the appropriate version -->
-                <configuration>
-                    <executable>true</executable>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ds-project</groupId>
+	<artifactId>amazon</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.1</version>
+		<relativePath />
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>ds-project</groupId>
+			<artifactId>core</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ds-project</groupId>
+			<artifactId>notification</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

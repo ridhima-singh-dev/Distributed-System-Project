@@ -36,6 +36,11 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+        	<groupId>ds-project</groupId>
+        	<artifactId>amazon</artifactId>
+        	<version>0.0.1</version>
+        </dependency>
     </dependencies>
     
     <build>

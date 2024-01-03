@@ -296,6 +296,36 @@ function applyJob(jobID, companyName, title, location, salary, skills, discripti
         .then(response => response.json())
         .then(data => {// notification call
             console.log(data)
+            if (data.success) {
+                // Popup a message for successful application
+                alert('Job successfully applied');
+
+                // Send payload to the sendToQueue endpoint
+                const queuePayload = {
+                    queueName: companyName.toLowerCase() + 'JobQueue',
+                    message: title
+                };
+                console.log('Sending to sendToQueue:', JSON.stringify(queuePayload));
+                fetch('http://localhost:8080/sendToQueue', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(queuePayload)
+                })
+                .then(response => response.text()) // Change to text() to see the raw response
+                .then(responseText => {
+                    console.log('Response from sendToQueue:', responseText);
+                    return responseText;
+                })
+                .then(responseJSON => JSON.parse(responseJSON))
+                .then(queueData => {
+                    console.log('sendToQueue response:', queueData);
+                })
+                .catch(error => {
+                    console.log('Error sending to queue:', error);
+                });
+            }
 
         })
         .catch(error => {
