@@ -78,15 +78,32 @@ function populateTable(data) {
                 </div>
             </div>
         </td>
-        <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">View</label></td>
-        <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">Apply</label></td>
+        <td onclick="showPopup('${item.discription}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
+        <div id="overlay" onclick="closePopup()"></div>
+<div id="popup" class="popup">
+    <div class="popupcontrols">
+        <span id="popupclose" onclick="closePopup()">X</span>
+    </div>
+    <div class="popupcontent">
+        <h1 id="popupContent">Some Popup Content</h1>
+    </div>
+</div>
+
+        <td onclick="applyJob('${item.jobID}', '${item.companyName}', '${item.title}', '${item.location}', '${item.salary}', '${item.skills.join(',')}', '${item.jobDescription}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">Apply</label></td>
+        
     `;
         tableBody.appendChild(newRow);
     });
 }
+//view button line 81
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(str) {
+    if(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }else{
+        return ''
+    }
+    
 }
 
 function getCompanyIcon(company) {
@@ -250,5 +267,45 @@ function callError(){
     </div>`
 }
 
+function showPopup(description) {
+    var popupContent = document.getElementById('popupContent');
+    popupContent.innerHTML = description;
 
-// 
+    // Display the overlay and popup box
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    // Hide the overlay and popup box
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+}
+
+
+function applyJob(jobID, companyName, title, location, salary, skills, discription) {
+    const today = new Date();
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const tdate = today.toLocaleDateString('en-US', options);
+    const payload = {
+        info : [jobID,'kamal1234@ucd.ie',tdate, companyName.toLowerCase(), salary, title, location, skills, discription]
+    }
+
+    console.log(payload)
+    fetch(`http://localhost:8080/applyJob`, {
+        method: 'POST',  // Make sure it's 'POST', not 'Post'
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+    })
+        .then(response => response.json())
+        .then(data => {// notification call
+            console.log(data)
+            
+        })
+        .catch(error => {
+            console.log('Error:', error)
+            callError()
+        });
+}
