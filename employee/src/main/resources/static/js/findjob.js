@@ -78,7 +78,7 @@ function populateTable(data) {
                 </div>
             </div>
         </td>
-        <td onclick="showPopup('${item.jobDescription}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
+        <td onclick="showPopup('${item.jobDescription}', '${item.companyName}', '${item.title}' , '${item.salary}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
         
 
         <td onclick="applyJob('${item.jobID}', '${item.companyName}', '${item.title}', '${item.location}', '${item.salary}', '${item.skills.join(',')}', '${item.jobDescription}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">Apply</label></td>
@@ -260,11 +260,13 @@ function callError() {
     </div>`
 }
 
-function showPopup(description) {
+function showPopup(description, companyName, title, salary) {
     console.log(description)
-    var popupContent = document.getElementById('popupContent');
-    popupContent.innerHTML = description;
 
+    var popupContentText = `Company: ${companyName}<br>Title: ${title} <br> Description: ${description} <br> Salary: ${salary}`;
+    var popupContent = document.getElementById('popupContent');
+    popupContent.innerHTML = popupContentText;
+    
     // Display the overlay and popup box
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
