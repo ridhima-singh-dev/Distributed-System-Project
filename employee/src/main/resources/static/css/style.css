@@ -7033,11 +7033,10 @@ ul.colors li p {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
-    width: 200px;
-    height: 200px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 200;
+    text-align: center;
 }
 
 #popupclose {

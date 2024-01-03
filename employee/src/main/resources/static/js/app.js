@@ -29,6 +29,7 @@ function populateTable(data) {
     // Loop through the data and create table rows
     data.forEach(item => {
         if (!existingJobs.has(item.jobID)) {
+            console.log(item, 'HTML')
             const newRow = document.createElement('tr'); // Create a new table row
             // Create table cells and populate data
             newRow.innerHTML = `
@@ -53,7 +54,7 @@ function populateTable(data) {
                     </div>
                 </div>
             </td>
-            <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">View Detail</label></td>
+            <td onclick="showPopup('${item.description}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
             `;
             tableBody.appendChild(newRow);
             existingJobs.add(item.jobID);
@@ -61,8 +62,13 @@ function populateTable(data) {
     });
 }
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(str) {
+    if (str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    } else {
+        return ''
+    }
+
 }
 
 function getCompanyIcon(company) {
@@ -104,4 +110,20 @@ function callError(){
     <div class="loader">
     <img src="img/error.png" style="width: 400px;">
     </div>`
+}
+
+function showPopup(description) {
+    console.log(description)
+    var popupContent = document.getElementById('popupContent');
+    popupContent.innerHTML = description;
+
+    // Display the overlay and popup box
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    // Hide the overlay and popup box
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
 }
