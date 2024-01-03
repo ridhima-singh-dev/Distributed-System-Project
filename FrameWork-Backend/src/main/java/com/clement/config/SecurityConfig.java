@@ -78,33 +78,32 @@ public class SecurityConfig {
 
                 .build();
     }
-    //需要设置remember-me token 的存储位置
-    //TODO:能否用redis存储?
+
     @Bean
     public PersistentTokenRepository persistentTokenRepository(){
         JdbcTokenRepositoryImpl jdbcTokenRepository =new JdbcTokenRepositoryImpl();
         jdbcTokenRepository.setDataSource(dataSource);
-        //只需要第一次 新建表格
+        //only first time
         jdbcTokenRepository.setCreateTableOnStartup(false);
         return jdbcTokenRepository;
     }
 
-    //跨域设置
+    //cors
     private CorsConfigurationSource configurationSource() {
         CorsConfiguration cors = new CorsConfiguration();
-        //开放的前端访问地址
+        //frontend
         cors.addAllowedOriginPattern("*");
-        //允许 cookie
+        //cookie
         cors.setAllowCredentials(true);
-        //允许header 的类型
+        //header
         cors.addAllowedHeader("*");
         cors.addExposedHeader("*");
-        //允许方法的类型
+        //method
         cors.addAllowedMethod("*");
-        //新建source
+        //source
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        //将source 注册 ,所有请求都走这个source ,使用cors config
+        //register source
         source.registerCorsConfiguration("/**", cors);
         return source;
     }
