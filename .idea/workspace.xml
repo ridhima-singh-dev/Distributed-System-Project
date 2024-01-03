@@ -78,7 +78,20 @@
       <recent name="service.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Spring Boot.Application (3)">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="employee" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="employee" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="amazon" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="service.Application" />
