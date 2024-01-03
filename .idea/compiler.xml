@@ -16,14 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="amazon" target="11" />
-      <module name="apple" target="11" />
-      <module name="core" target="11" />
-      <module name="employee" target="11" />
-      <module name="facebook" target="11" />
-      <module name="google" target="11" />
-      <module name="job-marketplace" target="1.5" />
-      <module name="netflix" target="11" />
+      <module name="FrameWork-Backend" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
