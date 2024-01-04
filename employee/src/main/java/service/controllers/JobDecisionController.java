@@ -1,5 +1,8 @@
 package service.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,54 +15,124 @@ import java.util.*;
 public class JobDecisionController {
 
     private final UserRepository userRepository;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
     public JobDecisionController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+
+    // test eureka
+    @GetMapping("/test/{companyName}")
+    public List<String> getApplyList(@PathVariable String companyName){
+
+        List<ServiceInstance> instances = discoveryClient.getInstances(companyName.toLowerCase());
+
+        List<String> res=new ArrayList<>();
+        for(ServiceInstance instance: instances){
+            res.add(instance.getUri().toString() + "/applyJob");
+        }
+
+
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+        System.out.println(res);
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+        return res;
+
+    }
+
     @PostMapping(value="/applyJob", produces="application/json")
-    public ResponseEntity<?> applyJob(@RequestBody Map<String,List<String>> info) {
+    public ResponseEntity<?> applyJob(@RequestBody Map<String, List<String>> info) {
         List<String> infoList = info.get("info");
         String companyName = infoList.get(3);
         RestTemplate template = new RestTemplate();
-        ResponseEntity<?> response = null;
-        if(Objects.equals(companyName, "facebook")){
-            response =
-                    template.postForEntity("http://localhost:8081/applyJob", infoList, Map.class);
-        } else if (Objects.equals(companyName, "amazon")) {
-            response =
-                    template.postForEntity("http://localhost:8082/applyJob", infoList, Map.class);
-        } else if (Objects.equals(companyName, "apple")) {
-            response =
-                    template.postForEntity("http://localhost:8083/applyJob", infoList, Map.class);
-        } else if (Objects.equals(companyName, "netflix")) {
-            response =
-                    template.postForEntity("http://localhost:8084/applyJob", infoList, Map.class);
-        } else if (Objects.equals(companyName, "google")) {
-            response =
-                    template.postForEntity("http://localhost:8085/applyJob", infoList, Map.class);
-        }else{
+
+        // get service list by company name
+        List<ServiceInstance> instances = discoveryClient.getInstances(companyName.toLowerCase());
+        if (instances.isEmpty()) {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Collections.singletonMap("success", false));
         }
 
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+        System.out.println(instances);
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+
+
+
+        // get first one
+        ServiceInstance serviceInstance = instances.get(0);
+        String url = serviceInstance.getUri().toString() + "/applyJob";
+        ResponseEntity<?> response = template.postForEntity(url, infoList, Map.class);
+
         if (response.getStatusCode().equals(HttpStatus.CREATED)) {
-            try{
+            try {
                 updateUserActivity(infoList);
                 return ResponseEntity
                         .status(HttpStatus.CREATED)
                         .body(Collections.singletonMap("success", true));
-            }catch (Exception e){
+            } catch (Exception e) {
                 return ResponseEntity
                         .status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body(Collections.singletonMap("success", false));
             }
-        }else{
+        } else {
             return ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Collections.singletonMap("success", false));
         }
     }
+
+//    @PostMapping(value="/applyJob", produces="application/json")
+//    public ResponseEntity<?> applyJob(@RequestBody Map<String,List<String>> info) {
+//        List<String> infoList = info.get("info");
+//        String companyName = infoList.get(3);
+//        RestTemplate template = new RestTemplate();
+//        ResponseEntity<?> response = null;
+//        if(Objects.equals(companyName, "facebook")){
+//            response =
+//                    template.postForEntity("http://localhost:8081/applyJob", infoList, Map.class);
+//        } else if (Objects.equals(companyName, "amazon")) {
+//            response =
+//                    template.postForEntity("http://localhost:8082/applyJob", infoList, Map.class);
+//        } else if (Objects.equals(companyName, "apple")) {
+//            response =
+//                    template.postForEntity("http://localhost:8083/applyJob", infoList, Map.class);
+//        } else if (Objects.equals(companyName, "netflix")) {
+//            response =
+//                    template.postForEntity("http://localhost:8084/applyJob", infoList, Map.class);
+//        } else if (Objects.equals(companyName, "google")) {
+//            response =
+//                    template.postForEntity("http://localhost:8085/applyJob", infoList, Map.class);
+//        }else{
+//            return ResponseEntity
+//                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                    .body(Collections.singletonMap("success", false));
+//        }
+//
+//        if (response.getStatusCode().equals(HttpStatus.CREATED)) {
+//            try{
+//                updateUserActivity(infoList);
+//                return ResponseEntity
+//                        .status(HttpStatus.CREATED)
+//                        .body(Collections.singletonMap("success", true));
+//            }catch (Exception e){
+//                return ResponseEntity
+//                        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                        .body(Collections.singletonMap("success", false));
+//            }
+//        }else{
+//            return ResponseEntity
+//                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                    .body(Collections.singletonMap("success", false));
+//        }
+//    }
 
     private void updateUserActivity(List<String> info){
         String email = info.get(1);

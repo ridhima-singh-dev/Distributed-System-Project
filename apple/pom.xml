@@ -1,6 +1,8 @@
-<project>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>ds-project</groupId>
+
     <artifactId>apple</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
@@ -11,9 +13,9 @@
     </properties>
 
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <groupId>ds-project</groupId>
+        <artifactId>root</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -24,31 +26,9 @@
             <version>0.0.1</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.2.4.RELEASE</version> <!-- Replace with the version of Spring Boot you are using -->
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.4.0</version> <!-- Use the latest version available -->
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.4.RELEASE</version> <!-- Use the appropriate version -->
-                <configuration>
-                    <executable>true</executable>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

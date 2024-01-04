@@ -1,5 +1,9 @@
 package service.controllers;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -10,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
 import service.models.UserActivity;
 import service.repositories.UserRepository;
+
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 
 @RestController
@@ -18,6 +24,30 @@ public class JobFindController {
     private final UserRepository userRepository;
     RestTemplate template = new RestTemplate();
 
+    //this is used to find service in eureka server
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    private List<String> serviceURLs;
+
+    @PostConstruct
+    private void initServiceUris() {
+        serviceURLs = new ArrayList<>();
+        List<String> serviceIds = discoveryClient.getServices();
+        for (String serviceId : serviceIds) {
+            List<ServiceInstance> instances = discoveryClient.getInstances(serviceId);
+            for (ServiceInstance instance : instances) {
+                serviceURLs.add(instance.getUri().toString());
+            }
+        }
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+        System.out.println(serviceURLs);
+        System.out.println("=========================================");
+        System.out.println("=========================================");
+
+    }
+
     public JobFindController(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -25,15 +55,9 @@ public class JobFindController {
     @GetMapping(value="/findAllJobs", produces="application/json")
     public List<Job> findAllJobs() {
         List<Job> jobs = new ArrayList<>();
-        String[] serviceURLs = {
-                "http://0.0.0.0:8081/findJobs",
-                "http://0.0.0.0:8082/findJobs",
-                "http://0.0.0.0:8083/findJobs",
-                "http://0.0.0.0:8084/findJobs",
-                "http://0.0.0.0:8085/findJobs"
-        };
 
         for (String url : serviceURLs) {
+            url=url+"/findJobs";
             ResponseEntity<List> response = template.getForEntity(url, List.class);
             if (response.getStatusCode().equals(HttpStatus.OK)) {
                 jobs.addAll(response.getBody());
@@ -45,15 +69,9 @@ public class JobFindController {
     @GetMapping(value="/findJobsBySkills", produces="application/json")
     public List<Job> findJobBySkills(@RequestParam("skills") List<String> skills) {
         List<Job> jobs = new ArrayList<>();
-        String[] serviceURLs = {
-                "http://0.0.0.0:8081/findJobsBySkills",
-                "http://0.0.0.0:8082/findJobsBySkills",
-                "http://0.0.0.0:8083/findJobsBySkills",
-                "http://0.0.0.0:8084/findJobsBySkills",
-                "http://0.0.0.0:8085/findJobsBySkills"
-        };
 
         for (String url : serviceURLs) {
+            url=url+"/findJobsBySkills";
             UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
             for (String skill : skills) {
                 builder.queryParam("skills", skill);
@@ -72,14 +90,9 @@ public class JobFindController {
     public List<Job> findJobByTitle(@RequestParam("title") String title) {
         System.out.println(title);
         List<Job> jobs = new ArrayList<>();
-        String[] serviceURLs = {
-                "http://0.0.0.0:8081/findJobsByTitle",
-                "http://0.0.0.0:8082/findJobsByTitle",
-                "http://0.0.0.0:8083/findJobsByTitle",
-                "http://0.0.0.0:8084/findJobsByTitle",
-                "http://0.0.0.0:8085/findJobsByTitle"
-        };
+
         for (String url : serviceURLs) {
+            url=url+"/findJobsByTitle";
             UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
             builder.queryParam("title", title);
 
