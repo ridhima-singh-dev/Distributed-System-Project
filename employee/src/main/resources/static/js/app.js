@@ -41,8 +41,8 @@ function populateTable(data) {
                 </span>
             </td>
             <td>${item.dateApplied}</td>
-            <td>${item.title}</td>
-            <td>${item.location}</td>
+            <td>${capitalizeFirstLetter(item.title)}</td>
+            <td>${capitalizeFirstLetter(item.location)}</td>
             <td>$${item.salary}</td>
             <td>
                 <div class="dropdown">

@@ -298,12 +298,12 @@ function closePopup() {
 }
 
 
-function applyJob(jobID, companyName, title, location, salary, skills, discription) {
+function applyJob(jobID, companyName, title, location, salary, skills, description) {
     const today = new Date();
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     const tdate = today.toLocaleDateString('en-US', options);
     const payload = {
-        info: [jobID, 'kamal1234@ucd.ie', tdate, companyName.toLowerCase(), salary, title, location, skills, discription]
+        info: [jobID, 'kamal@ucdconnect.ie', tdate, companyName.toLowerCase(), salary, title, location, skills, description]
     }
 
     console.log(payload)
