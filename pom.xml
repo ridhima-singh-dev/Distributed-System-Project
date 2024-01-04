@@ -13,6 +13,5 @@
         <module>apple</module>
         <module>netflix</module>
         <module>google</module>
-        
     </modules>
 </project>
