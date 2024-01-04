@@ -25,10 +25,11 @@ function getAppliedJobs() {
 }
 
 function populateTable(data) {
-    const tableBody = document.getElementById('jobs'); 
+    const tableBody = document.getElementById('jobs');
     // Loop through the data and create table rows
     data.forEach(item => {
         if (!existingJobs.has(item.jobID)) {
+            console.log(item, 'HTML')
             const newRow = document.createElement('tr'); // Create a new table row
             // Create table cells and populate data
             newRow.innerHTML = `
@@ -40,8 +41,8 @@ function populateTable(data) {
                 </span>
             </td>
             <td>${item.dateApplied}</td>
-            <td>${item.title}</td>
-            <td>${item.location}</td>
+            <td>${capitalizeFirstLetter(item.title)}</td>
+            <td>${capitalizeFirstLetter(item.location)}</td>
             <td>$${item.salary}</td>
             <td>
                 <div class="dropdown">
@@ -53,7 +54,7 @@ function populateTable(data) {
                     </div>
                 </div>
             </td>
-            <td><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending">View Detail</label></td>
+            <td onclick="showPopup('${item.description}', '${item.companyName}', '${item.title}' , '${item.salary}', '${item.location}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
             `;
             tableBody.appendChild(newRow);
             existingJobs.add(item.jobID);
@@ -61,8 +62,13 @@ function populateTable(data) {
     });
 }
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(str) {
+    if (str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    } else {
+        return ''
+    }
+
 }
 
 function getCompanyIcon(company) {
@@ -88,7 +94,7 @@ function callLoader (){
     <div class="loader">
             <div class="spinner">
               <img src="img/loader.gif" alt="">
-            </div> 
+            </div>
           </div>
     `
 }
@@ -104,4 +110,41 @@ function callError(){
     <div class="loader">
     <img src="img/error.png" style="width: 400px;">
     </div>`
+}
+
+function showPopup(description, companyName, title, salary) {
+    console.log(description)
+    document.getElementById("popup").innerHTML = ''
+    const body = document.createElement("div");
+    body.innerHTML =
+    `
+    <div class="modal-header" style="padding: 0px;">
+                    <h3 class="modal-title">${capitalizeFirstLetter(companyName)}</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closePopup()">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                  <h1 class="modal-title" >${capitalizeFirstLetter(title)}</h1>
+                  <h3 style="text-align: left;">Job Description</h3>
+                  <p style="text-align: left; font-size: medium;">
+                  Remote is solving global remote organizations' biggest Challenge: employing anyone anywhere compliantly, We
+                    make it possible for businesses big and small to employ a global team by handling global payroll. benefits.
+                    taxes. and compliance Wearn more about how it works We•re backed by A• investors and our team is world-
+                    Class, literally and figuratively. as we're all scattered around the world
+                    ${description}
+                    </p>
+                <div style="display: flex; align-items: center; padding: 10px 0px;"><h3>Salary: </h3><p style="font-size: large;"> &nbsp;Euro ${salary} per year</p></div>
+                <div style="display: flex; align-items: center; padding: 5px 0px;"><h3>Location: </h3><p style="font-size: large;"> &nbsp;Remote</p></div>
+                <button type="button" class="btn btn-secondary squer-btn" data-dismiss="modal" onclick="closePopup()">Close</button>
+    `
+    document.getElementById("popup").appendChild(body)
+    // Display the overlay and popup box
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+    // Hide the overlay and popup box
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
 }

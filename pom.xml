@@ -23,6 +23,7 @@
         <module>google</module>
         <module>employee</module>
         <module>login</module>
+        <module>notification</module>
     </modules>
 
     <properties>
