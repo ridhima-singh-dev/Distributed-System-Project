@@ -39,7 +39,7 @@
         </dependency>
         <dependency>
         	<groupId>ds-project</groupId>
-        	<artifactId>amazon</artifactId>
+        	<artifactId>notification</artifactId>
         	<version>0.0.1</version>
         </dependency>
     </dependencies>

@@ -24,6 +24,11 @@
             <version>0.0.1</version>
         </dependency>
         <dependency>
+            <groupId>ds-project</groupId>
+            <artifactId>notification</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             
@@ -39,7 +44,7 @@
         </dependency>
         <dependency>
         	<groupId>ds-project</groupId>
-        	<artifactId>amazon</artifactId>
+        	<artifactId>notification</artifactId>
         	<version>0.0.1</version>
         </dependency>
     </dependencies>
