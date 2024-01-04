@@ -22,6 +22,7 @@
         <module>netflix</module>
         <module>google</module>
         <module>employee</module>
+        <module>login</module>
     </modules>
 
     <properties>

@@ -164,7 +164,7 @@ iframe {
 }
 
 .ad-auth-wrapper:before {
-    background-image: url(../image/auth-bg.png);
+    background-image: url(../img/auth-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
     content: "";
@@ -420,7 +420,7 @@ iframe {
 }
 
 .ad-notifications.ad-error:before {
-    background-image: url(../image/sad.png);
+    background-image: url(../img/sad.png);
 }
 
 
