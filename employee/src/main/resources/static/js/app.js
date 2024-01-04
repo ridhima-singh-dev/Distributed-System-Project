@@ -54,7 +54,7 @@ function populateTable(data) {
                     </div>
                 </div>
             </td>
-            <td onclick="showPopup('${item.jobDescription}', '${item.companyName}', '${item.title}' , '${item.salary}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
+            <td onclick="showPopup('${item.description}', '${item.companyName}', '${item.title}' , '${item.salary}', '${item.location}')"><label class="mb-0 badge badge-primary view-detail" title="" data-original-title="Pending" >View</label></td>
             `;
             tableBody.appendChild(newRow);
             existingJobs.add(item.jobID);
@@ -114,11 +114,30 @@ function callError(){
 
 function showPopup(description, companyName, title, salary) {
     console.log(description)
-
-    var popupContentText = `Company: ${companyName}<br>Title: ${title} <br> Description: ${description} <br> Salary: ${salary}`;
-    var popupContent = document.getElementById('popupContent');
-    popupContent.innerHTML = popupContentText;
-    
+    document.getElementById("popup").innerHTML = ''
+    const body = document.createElement("div");
+    body.innerHTML = 
+    `
+    <div class="modal-header" style="padding: 0px;">
+                    <h3 class="modal-title">${capitalizeFirstLetter(companyName)}</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closePopup()"> 
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                  <h1 class="modal-title" >${capitalizeFirstLetter(title)}</h1>
+                  <h3 style="text-align: left;">Job Description</h3>
+                  <p style="text-align: left; font-size: medium;">
+                  Remote is solving global remote organizations' biggest Challenge: employing anyone anywhere compliantly, We
+                    make it possible for businesses big and small to employ a global team by handling global payroll. benefits.
+                    taxes. and compliance Wearn more about how it works We•re backed by A• investors and our team is world-
+                    Class, literally and figuratively. as we're all scattered around the world
+                    ${description}
+                    </p>
+                <div style="display: flex; align-items: center; padding: 10px 0px;"><h3>Salary: </h3><p style="font-size: large;"> &nbsp;Euro ${salary} per year</p></div>
+                <div style="display: flex; align-items: center; padding: 5px 0px;"><h3>Location: </h3><p style="font-size: large;"> &nbsp;Remote</p></div>
+                <button type="button" class="btn btn-secondary squer-btn" data-dismiss="modal" onclick="closePopup()">Close</button>
+    `
+    document.getElementById("popup").appendChild(body)
     // Display the overlay and popup box
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('popup').style.display = 'block';
