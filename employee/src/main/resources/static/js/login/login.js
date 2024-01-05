@@ -6,7 +6,7 @@ $(document).ready(function() {
 
         $.ajax({
             //here need to change the url
-            url: "http://localhost:8090/api/auth/login",
+            url: "http://jobmarketplace:8090/api/auth/login",
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
             data: {

@@ -16,7 +16,8 @@
         <groupId>ds-project</groupId>
         <artifactId>root</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+<!--        <relativePath/>-->
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
@@ -44,5 +45,17 @@
             <version>0.0.1</version>
         </dependency>
     </dependencies>
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <mainClass>service.FacebookApplication</mainClass>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

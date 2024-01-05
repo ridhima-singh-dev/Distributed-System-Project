@@ -15,10 +15,24 @@
         <groupId>ds-project</groupId>
         <artifactId>root</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+<!--        <relativePath/>-->
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Exclude the spring-boot-maven-plugin for this module -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

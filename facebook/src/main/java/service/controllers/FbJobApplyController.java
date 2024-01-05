@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import service.core.models.Job;
 import service.core.repositories.JobRepository;
-import service.notification.controller.MessageController;
-import service.notification.models.Notification;
+
 
 import java.util.*;
 
@@ -58,13 +57,7 @@ public class FbJobApplyController {
     }
 
 
-    private Notification buildNotification(List<String> info) {
-        Notification notification = new Notification();
-        notification.setJobId(info.get(0));
-        notification.setEmail(info.get(1));
-        notification.setCompanyName(info.get(3));
-        return notification;
-    }
+
 
     private void updateJob(List<String> info) {
         String jobID = info.get(0);

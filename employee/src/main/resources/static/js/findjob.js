@@ -10,7 +10,7 @@ var selectedskills = []
 
 function getAllJobs() {
     callLoader()
-    fetch(`http://localhost:8080/findAllJobs`, {
+    fetch(`http://employee:8080/findAllJobs`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -177,7 +177,7 @@ function filterBySkill(skill) {
         })
         console.log(querystring)
 
-        fetch(`http://localhost:8080/findJobsBySkills?${querystring}`, {
+        fetch(`http://employee:8080/findJobsBySkills?${querystring}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -202,7 +202,7 @@ function filterBySkill(skill) {
 
 function filterByTitle() {
     var inputValue = document.getElementById("titleSearch").value;
-    fetch(`http://localhost:8080/findJobsByTitle?title=${inputValue}`, {
+    fetch(`http://employee:8080/findJobsByTitle?title=${inputValue}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -307,7 +307,7 @@ function applyJob(jobID, companyName, title, location, salary, skills, descripti
     }
 
     console.log(payload)
-    fetch(`http://localhost:8080/applyJob`, {
+    fetch(`http://employee:8080/applyJob`, {
         method: 'POST',  // Make sure it's 'POST', not 'Post'
         headers: {
             'Content-Type': 'application/json'
@@ -327,7 +327,7 @@ function applyJob(jobID, companyName, title, location, salary, skills, descripti
                     message: title
                 };
                 console.log('Sending to sendToQueue:', JSON.stringify(queuePayload));
-                fetch('http://localhost:8080/sendToQueue', {
+                fetch('http://employee:8080/sendToQueue', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

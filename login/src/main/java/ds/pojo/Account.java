@@ -1,7 +1,5 @@
 package ds.pojo;
 
-import org.springframework.stereotype.Component;
-
 /**
  * @Author Qinghan Huang
  * @Desc

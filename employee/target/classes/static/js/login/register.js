@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 
         $.ajax({
-            url: "http://localhost:8090/api/auth/register",
+            url: "http://jobmarketplace:8090/api/auth/register",
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
             data: {

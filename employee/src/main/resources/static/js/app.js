@@ -7,7 +7,7 @@ setInterval(getAppliedJobs, 60000);
 
 function getAppliedJobs() {
     callLoader()
-    fetch(`http://localhost:8080/getAppliedJobs/${email}`, {
+    fetch(`http://employee:8080/getAppliedJobs/${email}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

@@ -6,7 +6,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import service.Application;
+import service.NotificationApplication;
 
 @Component
 public class Runner implements CommandLineRunner {
@@ -25,7 +25,7 @@ public class Runner implements CommandLineRunner {
     Notification notification = new Notification();
     
     rabbitTemplate.setMessageConverter(new org.springframework.amqp.support.converter.Jackson2JsonMessageConverter());
-    rabbitTemplate.convertAndSend(Application.topicExchangeName, "job.application", notification);
+    rabbitTemplate.convertAndSend(NotificationApplication.topicExchangeName, "job.application", notification);
     receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
     
     }

@@ -1,29 +1,21 @@
 package service.controllers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import service.notification.controller.*;
 import service.core.models.Job;
 import service.core.repositories.JobRepository;
-import service.notification.models.*;
 
 @RestController
 public class AzJobApplyController {
@@ -66,14 +58,6 @@ public class AzJobApplyController {
         }
     }
 
-    private Notification buildNotification(List<String> info) {
-        Notification notification = new Notification();
-        notification.setJobId(info.get(0));
-        notification.setEmail(info.get(1));
-        notification.setCompanyName(info.get(3));
-        return notification;
-    }
-
     private void updateJob(List<String> info) {
         String jobID = info.get(0);
         String emailId = info.get(1);
@@ -88,9 +72,6 @@ public class AzJobApplyController {
             jobRepository.save(job);
         }
     }
-    private Notification convertJsonToNotification(String jsonString) throws IOException {
-        System.out.println("Jsonstring:" + jsonString );
-        return new ObjectMapper().readValue(jsonString, Notification.class);
-    }
+
 
 }

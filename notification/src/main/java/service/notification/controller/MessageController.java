@@ -1,5 +1,6 @@
 package service.notification.controller;
 
+import service.NotificationApplication;
 import service.notification.models.MessageSender;
 import service.notification.models.Notification;
 import service.notification.models.Receiver;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import service.Application;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
@@ -35,7 +34,7 @@ public class MessageController {
     @PostMapping(value = "/sendJobApplication", consumes = "application/json")
     public String sendJobApplication(@RequestBody Notification notification) {
     	System.out.println("Inside Job Application");
-        rabbitTemplate.convertAndSend(Application.topicExchangeName, "job.application", notification);
+        rabbitTemplate.convertAndSend(NotificationApplication.topicExchangeName, "job.application", notification);
 
         try {
             receiver.getLatch().await();

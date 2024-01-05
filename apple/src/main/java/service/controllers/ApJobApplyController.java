@@ -14,8 +14,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import service.core.models.Job;
 import service.core.repositories.JobRepository;
-import service.notification.models.*;
-import service.notification.controller.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,13 +60,6 @@ public class ApJobApplyController {
     }
 
 
-    private Notification buildNotification(List<String> info) {
-        Notification notification = new Notification();
-        notification.setJobId(info.get(0));
-        notification.setEmail(info.get(1));
-        notification.setCompanyName(info.get(3));
-        return notification;
-    }
 
     private void updateJob(List<String> info) {
         String jobID = info.get(0);
@@ -85,8 +76,5 @@ public class ApJobApplyController {
         }
     }
 
-    private Notification convertJsonToNotification(String jsonString) throws IOException {
-        System.out.println("Jsonstring:" + jsonString );
-        return new ObjectMapper().readValue(jsonString, Notification.class);
-    }
+
 }
