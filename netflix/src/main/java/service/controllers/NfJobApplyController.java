@@ -20,11 +20,10 @@ import java.util.Optional;
 @RestController
 public class NfJobApplyController {
     private final JobRepository jobRepository;
-    private final RabbitTemplate rabbitTemplate;
 
-    public NfJobApplyController(JobRepository jobRepository, RabbitTemplate rabbitTemplate) {
+
+    public NfJobApplyController(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
-        this.rabbitTemplate = rabbitTemplate;
     }
 
     @PostMapping(value="/applyJob", consumes="application/json")
@@ -42,20 +41,20 @@ public class NfJobApplyController {
         }
     }
 
-    @RabbitListener(queues = "netflixJobQueue")
-    public void receiveJobApplication(Message message) {
-        System.out.println("Message: " + message);
-        Object content = message.getBody();
-
-
-        if (content instanceof byte[]) {
-            String jsonString = new String((byte[]) content);
-            System.out.println("Received job application in Netflix : " + jsonString);
-        } else if (content instanceof String) {
-            String plainText = (String) content;
-            System.out.println("Received plain text message in Netflix : " + plainText);
-        }
-    }
+//    @RabbitListener(queues = "netflixJobQueue")
+//    public void receiveJobApplication(Message message) {
+//        System.out.println("Message: " + message);
+//        Object content = message.getBody();
+//
+//
+//        if (content instanceof byte[]) {
+//            String jsonString = new String((byte[]) content);
+//            System.out.println("Received job application in Netflix : " + jsonString);
+//        } else if (content instanceof String) {
+//            String plainText = (String) content;
+//            System.out.println("Received plain text message in Netflix : " + plainText);
+//        }
+//    }
 
 
 

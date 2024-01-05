@@ -20,11 +20,9 @@ import java.util.Optional;
 @RestController
 public class GgJobApplyController {
     private final JobRepository jobRepository;
-    private final RabbitTemplate rabbitTemplate;
 
-    public GgJobApplyController(JobRepository jobRepository, RabbitTemplate rabbitTemplate) {
+    public GgJobApplyController(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
-        this.rabbitTemplate = rabbitTemplate;
     }
 
     @PostMapping(value="/applyJob", consumes="application/json")
@@ -43,20 +41,20 @@ public class GgJobApplyController {
         }
     }
 
-    @RabbitListener(queues = "googleJobQueue")
-    public void receiveJobApplication(Message message) {
-        System.out.println("Message: " + message);
-        Object content = message.getBody();
-
-
-        if (content instanceof byte[]) {
-            String jsonString = new String((byte[]) content);
-            System.out.println("Received job application in Google : " + jsonString);
-        } else if (content instanceof String) {
-            String plainText = (String) content;
-            System.out.println("Received plain text message in Google : " + plainText);
-        }
-    }
+//    @RabbitListener(queues = "googleJobQueue")
+//    public void receiveJobApplication(Message message) {
+//        System.out.println("Message: " + message);
+//        Object content = message.getBody();
+//
+//
+//        if (content instanceof byte[]) {
+//            String jsonString = new String((byte[]) content);
+//            System.out.println("Received job application in Google : " + jsonString);
+//        } else if (content instanceof String) {
+//            String plainText = (String) content;
+//            System.out.println("Received plain text message in Google : " + plainText);
+//        }
+//    }
 
 
 

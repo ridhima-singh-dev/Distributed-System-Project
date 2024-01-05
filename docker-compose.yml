@@ -1,41 +1,26 @@
 version: '3.6'
 
 services:
-  rabbitmq:
-    image: "rabbitmq:3.13-rc-management"  # Pulls the image from DockerHub if not in local
-    container_name: "rabbitmq"    # Defines container's name
-    ports:
-      - "5672:5672"  # AMQP
-      - "15672:15672"  # Management UI
-    environment:
-      RABBITMQ_DEFAULT_USER: guest  # Sets RabbitMQ's login credentials
-      RABBITMQ_DEFAULT_PASS: guest  # Sets RabbitMQ's login credentials
-    healthcheck:
-      test: rabbitmq-diagnostics -q ping
-      interval: 30s
-      timeout: 30s
-      retries: 3
 
-#  eureka-server:
-#    build: eureka-server
-#    ports:
-#      - "8761:8761"
+  eureka-server:
+    build: eureka-server
+    ports:
+      - "8761:8761"
 
 #  notification:
 #    build: notification
 #    depends_on:
-#      - eureka-server
-##      - rabbitmq
+      #- eureka-server
+      #- rabbitmq
 #    ports:
 #      - "8087:8087"
 
-#  login:
-#    build: login
-#    depends_on:
-#      - eureka-server
-#      - rabbitmq
-#    ports:
-#      - "8090:8090"
+  login:
+    build: login
+    depends_on:
+      - eureka-server
+    ports:
+      - "8090:8090"
 
 #  amazon:
 #    build: amazon

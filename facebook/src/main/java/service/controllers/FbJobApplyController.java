@@ -18,11 +18,9 @@ import java.util.*;
 @RestController
 public class FbJobApplyController {
     private final JobRepository jobRepository;
-    private final RabbitTemplate rabbitTemplate;
 
-    public FbJobApplyController(JobRepository jobRepository, RabbitTemplate rabbitTemplate) {
+    public FbJobApplyController(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
-        this.rabbitTemplate = rabbitTemplate;
     }
 
     @PostMapping(value="/applyJob", consumes="application/json")
@@ -41,20 +39,20 @@ public class FbJobApplyController {
         }
     }
 
-    @RabbitListener(queues = "facebookJobQueue")
-    public void receiveJobApplication(Message message) {
-        System.out.println("Message: " + message);
-        Object content = message.getBody();
-
-
-        if (content instanceof byte[]) {
-            String jsonString = new String((byte[]) content);
-            System.out.println("Received job application in Facebook : " + jsonString);
-        } else if (content instanceof String) {
-            String plainText = (String) content;
-            System.out.println("Received plain text message in Facebook : " + plainText);
-        }
-    }
+//    @RabbitListener(queues = "facebookJobQueue")
+//    public void receiveJobApplication(Message message) {
+//        System.out.println("Message: " + message);
+//        Object content = message.getBody();
+//
+//
+//        if (content instanceof byte[]) {
+//            String jsonString = new String((byte[]) content);
+//            System.out.println("Received job application in Facebook : " + jsonString);
+//        } else if (content instanceof String) {
+//            String plainText = (String) content;
+//            System.out.println("Received plain text message in Facebook : " + plainText);
+//        }
+//    }
 
 
 

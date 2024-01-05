@@ -24,11 +24,11 @@ import java.util.Optional;
 @RestController
 public class ApJobApplyController {
     private final JobRepository jobRepository;
-    private final RabbitTemplate rabbitTemplate;
+   // private final RabbitTemplate rabbitTemplate;
 
-    public ApJobApplyController(JobRepository jobRepository, RabbitTemplate rabbitTemplate) {
+    public ApJobApplyController(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
-        this.rabbitTemplate = rabbitTemplate;
+
     }
 
     @PostMapping(value = "/applyJob", consumes = "application/json")
@@ -44,20 +44,20 @@ public class ApJobApplyController {
         }
     }
 
-    @RabbitListener(queues = "appleJobQueue")
-    public void receiveJobApplication(Message message) {
-        System.out.println("Message: " + message);
-        Object content = message.getBody();
-
-
-        if (content instanceof byte[]) {
-            String jsonString = new String((byte[]) content);
-            System.out.println("Received job application in Apple : " + jsonString);
-        } else if (content instanceof String) {
-            String plainText = (String) content;
-            System.out.println("Received plain text message in Apple : " + plainText);
-        }
-    }
+//    @RabbitListener(queues = "appleJobQueue")
+//    public void receiveJobApplication(Message message) {
+//        System.out.println("Message: " + message);
+//        Object content = message.getBody();
+//
+//
+//        if (content instanceof byte[]) {
+//            String jsonString = new String((byte[]) content);
+//            System.out.println("Received job application in Apple : " + jsonString);
+//        } else if (content instanceof String) {
+//            String plainText = (String) content;
+//            System.out.println("Received plain text message in Apple : " + plainText);
+//        }
+//    }
 
 
 

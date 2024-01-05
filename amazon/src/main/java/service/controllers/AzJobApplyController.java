@@ -20,12 +20,10 @@ import service.core.repositories.JobRepository;
 @RestController
 public class AzJobApplyController {
     private final JobRepository jobRepository;
-    //private final MessageController messageController;
-    private final RabbitTemplate rabbitTemplate;
 
-    public AzJobApplyController(JobRepository jobRepository, RabbitTemplate rabbitTemplate) {
+
+    public AzJobApplyController(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
-        this.rabbitTemplate = rabbitTemplate;
     }
 
     @PostMapping(value = "/applyJob", consumes = "application/json")
@@ -43,20 +41,20 @@ public class AzJobApplyController {
         }
     }
 
-    @RabbitListener(queues = "amazonJobQueue")
-    public void receiveJobApplication(Message message) {
-        System.out.println("Message: " + message);
-        Object content = message.getBody();
-
-
-        if (content instanceof byte[]) {
-            String jsonString = new String((byte[]) content);
-            System.out.println("Received job application in Amazon : " + jsonString);
-        } else if (content instanceof String) {
-            String plainText = (String) content;
-            System.out.println("Received plain text message in Amazon : " + plainText);
-        }
-    }
+//    @RabbitListener(queues = "amazonJobQueue")
+//    public void receiveJobApplication(Message message) {
+//        System.out.println("Message: " + message);
+//        Object content = message.getBody();
+//
+//
+//        if (content instanceof byte[]) {
+//            String jsonString = new String((byte[]) content);
+//            System.out.println("Received job application in Amazon : " + jsonString);
+//        } else if (content instanceof String) {
+//            String plainText = (String) content;
+//            System.out.println("Received plain text message in Amazon : " + plainText);
+//        }
+//    }
 
     private void updateJob(List<String> info) {
         String jobID = info.get(0);
