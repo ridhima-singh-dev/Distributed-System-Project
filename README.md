@@ -29,7 +29,7 @@ System Architecture
 ![WhatsApp Image 2024-01-05 at 17 45 04_80da1433](https://github.com/ridhima-singh-dev/Distributed-System-Project/assets/31386972/d87546bb-8159-4336-9200-2f83d6da4f4e)
 
 
-# Traffic Management
+# Architecture
 
 ## Cloud Interface Configuration
 We have prepared an interface capable of adeptly managing incoming cloud traffic, indicative of the system's readiness for cloud-based operations.
