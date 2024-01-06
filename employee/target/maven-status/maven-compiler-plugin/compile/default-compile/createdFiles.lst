@@ -1,5 +1,0 @@
-service\models\UserActivity.class
-service\repositories\UserRepository.class
-service\controllers\JobFindController.class
-service\Application.class
-service\controllers\JobDecisionController.class
