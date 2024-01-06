@@ -79,7 +79,7 @@ We've ensured data retention and resilience across service restarts and downtime
 ### Relational Database Incorporation
 To handle structured data requiring relational integrity, we've included a MySQL database, addressing transactional data management needs.
 
-#How to Run?
+# How to Run?
 Instructions on how to compile and run your code:
 
 1. mvn clean install
