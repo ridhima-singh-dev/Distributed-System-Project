@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eeb37506-886a-4387-8f6b-2e4a6a271589" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Wait.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/target/amazon-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/target/amazon-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/target/amazon-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/target/amazon-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apple/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple/target/apple-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/apple/target/apple-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple/target/apple-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/apple/target/apple-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apple/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/apple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/apple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/core-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/core-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/js/findjob.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/findjob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/js/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/js/login/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/js/login/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/myJobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/myJobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/src/main/resources/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/js/findjob.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/js/findjob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/js/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/js/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/js/login/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/js/login/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/myJobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/myJobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/classes/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/classes/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/employee-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/employee/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/facebook-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/target/facebook-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/facebook-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/target/facebook-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/facebook/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/facebook/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/google/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/google/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/google-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/google/target/google-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/google-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/google/target/google-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/google/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/google/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix/target/netflix-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/target/netflix-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix/target/netflix-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/netflix/target/netflix-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/notification/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/notification/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/target/notification-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/notification/target/notification-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification/target/notification-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/notification/target/notification-0.0.1.jar.original" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2aYSGcaQobj5w7zEeoaKJ4gJaZw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AmazonApplication.executor": "Run",
+    "Application.AppleApplication.executor": "Run",
+    "Application.Application.executor": "Run",
+    "Application.EurekaServerApplication.executor": "Run",
+    "Application.FacebookApplication.executor": "Run",
+    "Application.GoogleApplication.executor": "Run",
+    "Application.LoginApplication.executor": "Run",
+    "Application.NetflixApplication.executor": "Run",
+    "Application.NotificationApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Branch__merged__services",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ridhi/Final/Distributed-System-Project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.Application" />
+      <module name="employee" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoogleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.GoogleApplication" />
+      <module name="google" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ds.LoginApplication" />
+      <module name="login" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ds.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NetflixApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.NetflixApplication" />
+      <module name="netflix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.NotificationApplication" />
+      <module name="notification" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Distributed-System-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Distributed-System-Project" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.NotificationApplication" />
+        <item itemvalue="Application.NetflixApplication" />
+        <item itemvalue="Application.LoginApplication" />
+        <item itemvalue="Application.GoogleApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-97de7592" />
+        <option value="jdk-20.0.2-azul-20.0.2-f644763e9732-d86f2a68" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eeb37506-886a-4387-8f6b-2e4a6a271589" name="Changes" comment="" />
+      <created>1704493924980</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704493924980</updated>
+    </task>
+    <servers />
+  </component>
+</project>
