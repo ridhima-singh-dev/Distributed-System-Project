@@ -29,7 +29,7 @@
         <div class="header-inner-wrapper">
             <div class="logo-wrapper">
                 <a href="/" class="admin-logo">
-                    <img src="img/faangconnect (2).png" alt="">
+                    <img src="img/faangconnect_white.png" alt="">
                 </a>
             </div>
             <div class="header-right">
@@ -69,7 +69,7 @@
                         </a>
                         <div class="user-info-box">
                             <div class="drop-down-header">
-                                <h4>User</h4>
+                                <h6 id="user" style="color: white;"></h6>
                             </div>
                             <ul>
                                 <!-- <li>
@@ -78,7 +78,7 @@
                                     </a>
                                 </li> -->
                                 <li>
-                                    <a href="login.html">
+                                    <a href="index.html">
                                         <i class="fas fa-sign-out-alt"></i> logout
                                     </a>
                                 </li>
@@ -95,7 +95,7 @@
             <ul class="main-menu">
 
                 <li>
-                    <a href="/">
+                    <a href="home.html">
                             <span class="icon-menu feather-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                             </span>
@@ -187,7 +187,7 @@
     console.log('Fetching notification messages from the server...');
 
     // Fetch notification messages from the server
-    fetch('http://notification:8080/getNotificationMessages')
+    fetch('http://localhost:8080/getNotificationMessages')
         .then(response => {
             console.log('Received response from the server:', response);
             return response.json();
@@ -214,6 +214,7 @@
             messages.forEach((message, index) => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
+                    <a href="javascript:void(0);">
                     <a href="javascript:void(0);">
                         <h5><i class="fas fa-exclamation-circle mr-2"></i>Notification ${index + 1}</h5>
                         <p>${message}</p>

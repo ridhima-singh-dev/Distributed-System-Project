@@ -1,3 +1,5 @@
+var email = localStorage.getItem('email');
+
 getAllJobs();
 var dataCopy = []
 var jobData = {
@@ -10,7 +12,7 @@ var selectedskills = []
 
 function getAllJobs() {
     callLoader()
-    fetch(`http://employee:8080/findAllJobs`, {
+    fetch(`http://localhost:8080/findAllJobs`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -23,6 +25,7 @@ function getAllJobs() {
             dataCopy = data;
             populateTable(data);
             setTimeout(removeLoader, 1000);
+            document.getElementById("user").innerHTML=email
 
         })
         .catch(error => {
@@ -35,10 +38,10 @@ function populateCompany(data) {
     console.log(data);
     data.forEach((el, i) => {
 
-        if (el.companyName in jobData) {
+        if (el.companyName.toLowerCase() in jobData) {
             jobData[el.companyName.toLowerCase()] = {
-                data: [...jobData[el.companyName].data, el],
-                count: jobData[el.companyName].data.length()
+                data: [...jobData[el.companyName.toLowerCase()].data, el],
+                count: jobData[el.companyName.toLowerCase()].count + 1
             }
         } else {
             jobData[el.companyName.toLowerCase()] = {
@@ -47,6 +50,7 @@ function populateCompany(data) {
             }
         }
     })
+    console.log(jobData, 'JobData')
     populateCompanyFilter(jobData)
 }
 
@@ -177,7 +181,7 @@ function filterBySkill(skill) {
         })
         console.log(querystring)
 
-        fetch(`http://employee:8080/findJobsBySkills?${querystring}`, {
+        fetch(`http://localhost:8080/findJobsBySkills?${querystring}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -202,7 +206,7 @@ function filterBySkill(skill) {
 
 function filterByTitle() {
     var inputValue = document.getElementById("titleSearch").value;
-    fetch(`http://employee:8080/findJobsByTitle?title=${inputValue}`, {
+    fetch(`http://localhost:8080/findJobsByTitle?title=${inputValue}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -303,11 +307,11 @@ function applyJob(jobID, companyName, title, location, salary, skills, descripti
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     const tdate = today.toLocaleDateString('en-US', options);
     const payload = {
-        info: [jobID, 'kamal@ucdconnect.ie', tdate, companyName.toLowerCase(), salary, title, location, skills, description]
+        info: [jobID, email, tdate, companyName.toLowerCase(), salary, title, location, skills, description]
     }
 
     console.log(payload)
-    fetch(`http://employee:8080/applyJob`, {
+    fetch(`http://localhost:8080/applyJob`, {
         method: 'POST',  // Make sure it's 'POST', not 'Post'
         headers: {
             'Content-Type': 'application/json'
@@ -327,7 +331,7 @@ function applyJob(jobID, companyName, title, location, salary, skills, descripti
                     message: title
                 };
                 console.log('Sending to sendToQueue:', JSON.stringify(queuePayload));
-                fetch('http://employee:8080/sendToQueue', {
+                fetch('http://localhost:8080/sendToQueue', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
