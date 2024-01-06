@@ -17,7 +17,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 console.log("Response:", response);
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
 
             },
             error: function (xhr, status, error) {

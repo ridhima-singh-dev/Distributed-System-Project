@@ -1,3 +1,5 @@
+var email = localStorage.getItem('email');
+
 getAllJobs();
 var dataCopy = []
 var jobData = {
@@ -18,11 +20,16 @@ function getAllJobs() {
     })
         .then(response => response.json())
         .then(data => {
-            populateCompany(data);
-            populateSkillArray(data);
-            dataCopy = data;
-            populateTable(data);
-            setTimeout(removeLoader, 1000);
+
+            if(Array.isArray(data)){
+                populateCompany(data);
+                populateSkillArray(data);
+                dataCopy = data;
+                populateTable(data);
+                setTimeout(removeLoader, 1000);
+                document.getElementById("user").innerHTML=email
+            }
+
 
         })
         .catch(error => {
@@ -35,10 +42,10 @@ function populateCompany(data) {
     console.log(data);
     data.forEach((el, i) => {
 
-        if (el.companyName in jobData) {
+        if (el.companyName.toLowerCase() in jobData) {
             jobData[el.companyName.toLowerCase()] = {
-                data: [...jobData[el.companyName].data, el],
-                count: jobData[el.companyName].data.length()
+                data: [...jobData[el.companyName.toLowerCase()].data, el],
+                count: jobData[el.companyName.toLowerCase()].count + 1
             }
         } else {
             jobData[el.companyName.toLowerCase()] = {
@@ -47,6 +54,7 @@ function populateCompany(data) {
             }
         }
     })
+    console.log(jobData, 'JobData')
     populateCompanyFilter(jobData)
 }
 
@@ -186,7 +194,11 @@ function filterBySkill(skill) {
             .then(response => response.json())
             .then(data => {
                 document.getElementById('jobs').innerHTML = '';
-                populateTable(data);
+
+                if(Array.isArray(data)){
+                    populateTable(data);
+
+                }
 
             })
             .catch(error => {
@@ -275,10 +287,6 @@ function showPopup(description, companyName, title, salary) {
                   <h1 class="modal-title" >${capitalizeFirstLetter(title)}</h1>
                   <h3 style="text-align: left;">Job Description</h3>
                   <p style="text-align: left; font-size: medium;">
-                  Remote is solving global remote organizations' biggest Challenge: employing anyone anywhere compliantly, We
-                    make it possible for businesses big and small to employ a global team by handling global payroll. benefits.
-                    taxes. and compliance Wearn more about how it works We•re backed by A• investors and our team is world-
-                    Class, literally and figuratively. as we're all scattered around the world
                     ${description}
                     </p>
                 <div style="display: flex; align-items: center; padding: 10px 0px;"><h3>Salary: </h3><p style="font-size: large;"> &nbsp;Euro ${salary} per year</p></div>
@@ -303,7 +311,7 @@ function applyJob(jobID, companyName, title, location, salary, skills, descripti
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
     const tdate = today.toLocaleDateString('en-US', options);
     const payload = {
-        info: [jobID, 'kamal@ucdconnect.ie', tdate, companyName.toLowerCase(), salary, title, location, skills, description]
+        info: [jobID, email, tdate, companyName.toLowerCase(), salary, title, location, skills, description]
     }
 
     console.log(payload)
@@ -334,14 +342,10 @@ function applyJob(jobID, companyName, title, location, salary, skills, descripti
                     },
                     body: JSON.stringify(queuePayload)
                 })
-                .then(response => response.text()) // Change to text() to see the raw response
+                .then(response => response.json()) // Change to text() to see the raw response
                 .then(responseText => {
                     console.log('Response from sendToQueue:', responseText);
                     return responseText;
-                })
-                .then(responseJSON => JSON.parse(responseJSON))
-                .then(queueData => {
-                    console.log('sendToQueue response:', queueData);
                 })
                 .catch(error => {
                     console.log('Error sending to queue:', error);

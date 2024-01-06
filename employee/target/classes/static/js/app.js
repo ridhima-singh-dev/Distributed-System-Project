@@ -1,9 +1,9 @@
-let email = 'kamal@ucdconnect.ie';
+var email = localStorage.getItem('email');
 let existingJobs = new Set();
 
 // Call below function on index.html load
 getAppliedJobs();
-setInterval(getAppliedJobs, 60000);
+// setInterval(getAppliedJobs, 60000);
 
 function getAppliedJobs() {
     callLoader()
@@ -16,8 +16,13 @@ function getAppliedJobs() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            populateTable(data);
+            if (Array.isArray(data)){
+                populateTable(data);
+            }else{
+                // callApplyJobHandler()
+            }
             setTimeout(removeLoader,1000);
+            document.getElementById("user").innerHTML=email
         })
         .catch(error => {
             callError();
@@ -147,4 +152,20 @@ function closePopup() {
     // Hide the overlay and popup box
     document.getElementById('overlay').style.display = 'none';
     document.getElementById('popup').style.display = 'none';
+}
+
+
+function callApplyJobHandler(){
+    let body = document.getElementById("zeroJobHandler");
+    let handler = document.createElement("div");
+    body.innerHTML = 
+    `
+    <img src="img/applyjob.png" style="width: 400px;">
+    <button type="button" class="btn btn-secondary squer-btn" onclick="openFindJobs()">Find Jobs</button>
+    `
+    // body.appendChild(handler)
+}
+
+function openFindJobs(){
+    window.location.href = 'home.html';
 }
